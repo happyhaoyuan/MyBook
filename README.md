@@ -17,6 +17,11 @@ npm install gitbook -g
 npm install gitbook-cli -g
 ```
 5. Add a new SSH key
+* Specify your user info
+```bash
+git config --global user.name "your_username"
+git config --global user.email "your_email"
+```
 * Check if exsit
 ```bash
 ls -al ~/.ssh
@@ -35,4 +40,4 @@ more id_rsa.pub
 cat id_rsa.pub
 ```
 Then add this to Github: **settings/SSH and GPG keys**
-    
+
