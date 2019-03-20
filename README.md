@@ -26,13 +26,13 @@ ls -al ~/.ssh
 ssh-keygen -t rsa
 ```
 * Get SSH key
-    * Windows
-    ```
-    more id_rsa.pub
-    ```
-    * Mac
-    ```
-    cat id_rsa.pub
-    ```
-    Then add this to Github: **settings/SSH and GPG keys**
+* Windows
+```
+more id_rsa.pub
+```
+* Mac
+```
+cat id_rsa.pub
+```
+Then add this to Github: **settings/SSH and GPG keys**
     
