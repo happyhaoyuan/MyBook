@@ -1,4 +1,5 @@
 # Summary
 
-* [Initial Installation](README.md)
+* [Intro](README.md)
+* [SSH](SSH.md)
 
