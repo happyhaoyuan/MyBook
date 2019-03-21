@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Git · GitBook</title>
+        <title>Bash · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="Bash.html" />
     
-    
-    <link rel="prev" href="SSH.html" />
+    <link rel="prev" href="Git.html" />
     
 
     </head>
@@ -129,7 +127,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2.2" data-path="Git.html">
+        <li class="chapter " data-level="1.2.2" data-path="Git.html">
             
                 <a href="Git.html">
             
@@ -142,7 +140,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.3" data-path="Bash.html">
+        <li class="chapter active" data-level="1.2.3" data-path="Bash.html">
             
                 <a href="Bash.html">
             
@@ -190,7 +188,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Git</a>
+        <a href=".." >Bash</a>
     </h1>
 </div>
 
@@ -205,51 +203,56 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="git">Git</h1>
+                                <h1 id="bash">Bash</h1>
 <ul>
 <li><p>Initialize</p>
-<pre><code class="lang-bash">git init
+<pre><code class="lang-bash"><span class="hljs-meta">#!/usr/bin/bash
+</span></code></pre>
+</li>
+<li><p>Print</p>
+<pre><code class="lang-bash"><span class="hljs-built_in">echo</span> {content}
 </code></pre>
 </li>
-<li><p>Add file</p>
-<pre><code class="lang-bash">git add {files}
+<li><p>Excute</p>
+<pre><code class="lang-bash"><span class="hljs-built_in">eval</span> {<span class="hljs-built_in">command</span>}
 </code></pre>
 </li>
-<li><p>Commit</p>
-<pre><code class="lang-bash">git commit -m <span class="hljs-string">&quot;{you commit}&quot;</span>
+<li><p>Load parameters in one time</p>
+<pre><code class="lang-bash"><span class="hljs-keyword">for</span> param <span class="hljs-keyword">in</span> $*
+<span class="hljs-keyword">do</span>
+<span class="hljs-built_in">export</span> <span class="hljs-variable">$param</span>
+<span class="hljs-keyword">done</span>
 </code></pre>
 </li>
-<li><p>Add the local to a remote repository</p>
-<pre><code class="lang-bash">git remote add origin {your remote git ssh address}
+<li><p>Timestap</p>
+<pre><code class="lang-bash">timestamp = `date <span class="hljs-string">&apos;+%Y%m%d_%H%M%S&apos;</span>`
 </code></pre>
 </li>
-<li><p>Push the change</p>
-<pre><code class="lang-bash">git push (-u) origin master
-</code></pre>
-</li>
-<li><p>Check all branches</p>
-<pre><code class="lang-bash">git branch <span class="hljs-_">-a</span>
-</code></pre>
-</li>
-<li><p>Create a branch</p>
-<pre><code class="lang-bash">git checkout -b {branch_name}
-</code></pre>
-</li>
-<li><p>Delete a branch</p>
-<pre><code class="lang-bash">git branch <span class="hljs-_">-d</span> {branch_name}
-</code></pre>
-</li>
-<li><p>Switch to a branch</p>
-<pre><code class="lang-bash">git checkout {branch_name}
-</code></pre>
-</li>
-<li><p>Check the conflict</p>
-<pre><code class="lang-bash">git status
-</code></pre>
-<blockquote>
-<p>or</p>
-</blockquote>
-<pre><code class="lang-bash">  git <span class="hljs-built_in">log</span>
+<li><p>Wait for input/data/jobs or check existing</p>
+<pre><code class="lang-bash"><span class="hljs-function"><span class="hljs-title">check_existing</span></span>()
+{
+<span class="hljs-built_in">local</span> target_file=<span class="hljs-string">&quot;<span class="hljs-variable">$1</span>&quot;</span> 
+<span class="hljs-built_in">local</span> position=<span class="hljs-variable">$2</span> 
+<span class="hljs-built_in">local</span> -i waiting=<span class="hljs-variable">$3</span> 
+<span class="hljs-built_in">local</span> -i sleeping=<span class="hljs-variable">$4</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;trying to find <span class="hljs-variable">$target_file</span> according to position <span class="hljs-variable">$position</span>, waiting for <span class="hljs-variable">$waiting</span> * <span class="hljs-variable">$sleeping</span> seconds&quot;</span>
+<span class="hljs-keyword">for</span> ((i=1;i&lt;=waiting;i++));
+<span class="hljs-keyword">do</span>
+  existing_status=`ls <span class="hljs-_">-l</span> <span class="hljs-variable">$target_file</span> | awk <span class="hljs-string">&apos;{path=\$&apos;</span><span class="hljs-variable">$position</span><span class="hljs-string">&apos;} END{print path}&apos;</span>`
+  <span class="hljs-keyword">if</span> [ -z <span class="hljs-string">&quot;<span class="hljs-variable">$existing_status</span>&quot;</span> ]; <span class="hljs-keyword">then</span>
+    <span class="hljs-built_in">echo</span> `date <span class="hljs-string">&apos;+%Y-%m-%d %H:%M:%S&apos;</span>` <span class="hljs-string">&quot;Still waiting for <span class="hljs-variable">$target_file</span>&quot;</span> 
+  <span class="hljs-keyword">else</span>
+    <span class="hljs-built_in">echo</span> `date <span class="hljs-string">&apos;+%Y-%m-%d %H:%M:%S&apos;</span>` <span class="hljs-string">&quot;Found <span class="hljs-variable">$target_file</span> succesffuly!&quot;</span> 
+    <span class="hljs-built_in">break</span>
+  <span class="hljs-keyword">fi</span>
+  sleep <span class="hljs-variable">$sleeping</span>
+<span class="hljs-keyword">done</span>
+
+<span class="hljs-keyword">if</span> [ -z <span class="hljs-string">&quot;<span class="hljs-variable">$existing_status</span>&quot;</span> ]; <span class="hljs-keyword">then</span>
+  <span class="hljs-built_in">echo</span> `date <span class="hljs-string">&apos;+%Y-%m-%d %H:%M:%S&apos;</span>` <span class="hljs-string">&quot;Waiting for a long time, quit!&quot;</span>
+  <span class="hljs-built_in">exit</span> 4
+<span class="hljs-keyword">fi</span>
+}
 </code></pre>
 </li>
 </ul>
@@ -280,14 +283,10 @@
 
             
                 
-                <a href="SSH.html" class="navigation navigation-prev " aria-label="Previous page: SSH">
+                <a href="Git.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Git">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="Bash.html" class="navigation navigation-next " aria-label="Next page: Bash">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -296,7 +295,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Git","level":"1.2.2","depth":2,"next":{"title":"Bash","level":"1.2.3","depth":2,"path":"Tool/Bash.md","ref":"./Tool/Bash.md","articles":[]},"previous":{"title":"SSH","level":"1.2.1","depth":2,"path":"Tool/SSH.md","ref":"./Tool/SSH.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Tool/Git.md","mtime":"2019-03-21T21:49:43.205Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-21T23:28:14.529Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Bash","level":"1.2.3","depth":2,"previous":{"title":"Git","level":"1.2.2","depth":2,"path":"Tool/Git.md","ref":"./Tool/Git.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Tool/Bash.md","mtime":"2019-03-21T23:27:56.887Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-21T23:28:14.529Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
