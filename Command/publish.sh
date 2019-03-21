@@ -1,32 +1,32 @@
-echo "install the plugins and build the static site"
+echo "1.install the plugins and build the static site"
 gitbook install && gitbook build
 
-echo "add all files to master"
+echo "2.add all files to master"
 git add .
 
-echo "commit master"
+echo "3.commit master"
 git commit -m "update master"
 
-echo "push to the master"
+echo "4.push to the master"
 git push origin master
 
-echo "checkout to the gh-pages branch"
+echo "5.checkout to the gh-pages branch"
 git checkout gh-pages
 
-echo "bring gh-pages up to date with master"
+echo "6.bring gh-pages up to date with master"
 git rebase master
 
-echo "copy the static site files into the current directory."
+echo "7.copy the static site files into the current directory."
 cp -R _book/* .
 
-echo "add all files to the gh-pages branch"
+echo "8.add all files to the gh-pages branch"
 git add .
 
-echo "commit to the gh-pages branch"
+echo "9.commit to the gh-pages branch"
 git commit -m "update gh-pages"
 
-echo "push to the gh-pages branch"
-git push origin gh-pages
+echo "10.push to the gh-pages branch"
+git push -f origin gh-pages
 
-echo "checkout to the master branch"
+echo "11.checkout to the master branch"
 git checkout master
