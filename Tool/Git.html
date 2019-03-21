@@ -190,11 +190,53 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <ul>
-<li>Create a branch<pre><code class="lang-bash">git checkout -b {branch_name}
+                                <h1 id="git">Git</h1>
+<ul>
+<li><p>Initialize</p>
+<pre><code class="lang-bash">git init
 </code></pre>
 </li>
-<li></li>
+<li><p>Add file</p>
+<pre><code class="lang-bash">git add {files}
+</code></pre>
+</li>
+<li><p>Commit</p>
+<pre><code class="lang-bash">git commit -m <span class="hljs-string">&quot;{you commit}&quot;</span>
+</code></pre>
+</li>
+<li><p>Add the local to a remote repository</p>
+<pre><code class="lang-bash">git remote add origin {your remote git ssh address}
+</code></pre>
+</li>
+<li><p>Push the change</p>
+<pre><code class="lang-bash">git push (-u) origin master
+</code></pre>
+</li>
+<li><p>Check all branches</p>
+<pre><code class="lang-bash">git branch <span class="hljs-_">-a</span>
+</code></pre>
+</li>
+<li><p>Create a branch</p>
+<pre><code class="lang-bash">git checkout -b {branch_name}
+</code></pre>
+</li>
+<li><p>Delete a branch</p>
+<pre><code class="lang-bash">git branch <span class="hljs-_">-d</span> {branch_name}
+</code></pre>
+</li>
+<li><p>Switch to a branch</p>
+<pre><code class="lang-bash">git checkout {branch_name}
+</code></pre>
+</li>
+<li><p>Check the conflict</p>
+<pre><code class="lang-bash">git status
+</code></pre>
+<blockquote>
+<p>or</p>
+</blockquote>
+<pre><code class="lang-bash">  git <span class="hljs-built_in">log</span>
+</code></pre>
+</li>
 </ul>
 
                                 
@@ -235,7 +277,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Git","level":"1.2.2","depth":2,"previous":{"title":"SSH","level":"1.2.1","depth":2,"path":"Tool/SSH.md","ref":"./Tool/SSH.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Tool/Git.md","mtime":"2019-03-21T01:18:31.777Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-21T21:18:28.355Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Git","level":"1.2.2","depth":2,"previous":{"title":"SSH","level":"1.2.1","depth":2,"path":"Tool/SSH.md","ref":"./Tool/SSH.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Tool/Git.md","mtime":"2019-03-21T21:49:27.884Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-21T21:49:36.000Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
