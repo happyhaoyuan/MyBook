@@ -1,4 +1,4 @@
-# How to initialize and install My Gitbook
+# How to initialize My Gitbook
 
 1. Install `Git`
 
