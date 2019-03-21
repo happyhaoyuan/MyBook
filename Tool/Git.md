@@ -21,7 +21,7 @@ git remote add origin {your remote git ssh address}
 ```
 * Push the change
 ```bash
-git push (-u) origin master
+git push (-u) (-f) origin master
 ```
 
 * Check all branches
