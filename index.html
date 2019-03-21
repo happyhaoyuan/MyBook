@@ -1,0 +1,368 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Intro · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="Tool/Basic_tool.html" />
+    
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter active" data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Intro
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="Tool/Basic_tool.html">
+            
+                <a href="Tool/Basic_tool.html">
+            
+                    
+                    Basic Tool
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="Tool/SSH.html">
+            
+                <a href="Tool/SSH.html">
+            
+                    
+                    SSH
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="Tool/Git.html">
+            
+                <a href="Tool/Git.html">
+            
+                    
+                    Git
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Intro</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="how-to-initialize-and-install-my-gitbook">How to initialize and install My Gitbook</h1>
+<ol>
+<li><p>Install <code>Git</code></p>
+<ul>
+<li><p>Windows </p>
+<blockquote>
+<p>Download <a href="https://git-scm.com/download/win" target="_blank">here</a></p>
+</blockquote>
+</li>
+<li><p>Mac</p>
+<blockquote>
+<p>Check and install it</p>
+<pre><code class="lang-bash">git --version
+</code></pre>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>Install <code>Nodejs</code></p>
+<blockquote>
+<p>Download <a href="https://nodejs.org/en/download/" target="_blank">here</a></p>
+</blockquote>
+</li>
+<li><p>Install <code>GitBook</code></p>
+<pre><code class="lang-bash">npm install gitbook -g
+</code></pre>
+</li>
+<li><p>Install <code>GitBook-Cli</code></p>
+<pre><code class="lang-bash">(sudo) npm install gitbook-cli -g
+</code></pre>
+</li>
+<li><p>Install sublime text</p>
+<ul>
+<li><p>Download <a href="http://www.sublimetext.com" target="_blank">here</a></p>
+</li>
+<li><p>Launch it in command</p>
+<pre><code class="lang-bash">ln <span class="hljs-_">-s</span> /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/<span class="hljs-built_in">local</span>/bin/sublime
+</code></pre>
+</li>
+<li><p>Package Control</p>
+<ul>
+<li><p><code>Ctrl+Shift+P</code> to search <code>Install Package Control</code> for the first use</p>
+</li>
+<li><p>search <code>Package Control: Install Package</code> to install</p>
+<ul>
+<li><p>MarkdownPreview</p>
+<p>go to <code>Preferences -&gt; Key Bindings</code> to add shortcut keys:</p>
+<pre><code class="lang-json">{ <span class="hljs-string">&quot;keys&quot;</span>: [<span class="hljs-string">&quot;ctrl+m&quot;</span>], <span class="hljs-string">&quot;command&quot;</span>: <span class="hljs-string">&quot;markdown_preview&quot;</span>, <span class="hljs-string">&quot;args&quot;</span>: {<span class="hljs-string">&quot;target&quot;</span>: <span class="hljs-string">&quot;browser&quot;</span>, <span class="hljs-string">&quot;parser&quot;</span>:<span class="hljs-string">&quot;markdown&quot;</span>}},
+{ <span class="hljs-string">&quot;keys&quot;</span>: [<span class="hljs-string">&quot;ctrl+g&quot;</span>], <span class="hljs-string">&quot;command&quot;</span>: <span class="hljs-string">&quot;markdown_preview&quot;</span>, <span class="hljs-string">&quot;args&quot;</span>: {<span class="hljs-string">&quot;target&quot;</span>: <span class="hljs-string">&quot;browser&quot;</span>, <span class="hljs-string">&quot;parser&quot;</span>:<span class="hljs-string">&quot;github&quot;</span>}}
+</code></pre>
+<p>go to <code>Preferences -&gt; Package Settings -&gt; Markdown Preview -&gt; Settings</code> to enable autoreload:</p>
+<pre><code class="lang-json">{<span class="hljs-string">&quot;enable_autoreload&quot;</span>: <span class="hljs-literal">true</span>}
+</code></pre>
+</li>
+<li><p>LiveReload</p>
+<p>search <code>LiveReload: Enable/disable plug-ins</code> to select <code>Simple Reload</code></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Add a new SSH key</p>
+<ul>
+<li><p>Specify your user info</p>
+<pre><code class="lang-bash">git config --global user.name <span class="hljs-string">&quot;your_username&quot;</span>
+git config --global user.email <span class="hljs-string">&quot;your_email&quot;</span>
+</code></pre>
+</li>
+<li><p>Check if exsit</p>
+<pre><code class="lang-bash">ls -al ~/.ssh
+</code></pre>
+</li>
+<li><p>Create a new one</p>
+<pre><code class="lang-bash">ssh-keygen -t rsa
+</code></pre>
+</li>
+<li><p>Get SSH key</p>
+<ul>
+<li><p>Windows</p>
+<pre><code class="lang-bash">more id_rsa.pub
+</code></pre>
+</li>
+<li><p>Mac</p>
+<pre><code class="lang-bash">cat id_rsa.pub
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p>Then add this to Github: <strong>settings/SSH and GPG keys</strong></p>
+</blockquote>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                
+                <a href="Tool/Basic_tool.html" class="navigation navigation-next navigation-unique" aria-label="Next page: Basic Tool">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Intro","level":"1.1","depth":1,"next":{"title":"Basic Tool","level":"1.2","depth":1,"path":"Tool/Basic_tool.md","ref":"./Tool/Basic_tool.md","articles":[{"title":"SSH","level":"1.2.1","depth":2,"path":"Tool/SSH.md","ref":"./Tool/SSH.md","articles":[]},{"title":"Git","level":"1.2.2","depth":2,"path":"Tool/Git.md","ref":"./Tool/Git.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"README.md","mtime":"2019-03-20T21:46:19.322Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-21T01:09:50.625Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
