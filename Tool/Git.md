@@ -7,17 +7,17 @@ git init
 
 * Add file
 ```bash
-git add {files}
+git add <files>
 ```
 
 * Commit
 ```bash
-git commit -m "{you commit}"
+git commit -m "<you commit>"
 ```
 
 * Add the local to a remote repository
 ```bash
-git remote add origin {your remote git ssh address}
+git remote add origin <your remote git ssh address>
 ```
 * Push the change
 ```bash
@@ -31,17 +31,17 @@ git branch -a
 
 * Create a branch
 ```bash
-git checkout -b {branch_name}
+git checkout -b <branch_name>
 ```
 
 * Delete a branch
 ```bash
-git branch -d {branch_name}
+git branch -d <branch_name>
 ```
 
 * Switch to a branch
 ```bash
-git checkout {branch_name}
+git checkout <branch_name>
 ```
 
 * Check the conflict

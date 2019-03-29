@@ -1,0 +1,30 @@
+{
+  "plugins": [
+    "include-codeblock",
+    "ace",
+    "splitter",
+    "github",
+    "tbfed-pagefooter",
+    "expandable-chapters-small",
+    "ga"
+  ],
+  "pluginsConfig": {
+  	"include-codeblock": {
+    	"template": "acefull",
+    	"unindent": true,
+    	"edit": true,
+    	"theme": "monokai"
+    },
+    "github": {
+        "url": "https://github.com/happyhaoyuan"
+    },
+    "tbfed-pagefooter": {
+        "copyright":"Copyright &copy Haoyuan Zou 2019",
+        "modify_label": "latest edit：",
+        "modify_format": "YYYY-MM-DD HH:mm:ss"
+    },
+    "ga": {
+        "token": "UA-XXXX-Y"
+    }
+  }
+}

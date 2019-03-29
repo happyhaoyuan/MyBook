@@ -3,7 +3,7 @@
 1. Install `Git`
 
 	* Windows 
-	> Download [here](https://git-scm.com/download/win)
+	> [Download](https://git-scm.com/download/win)
 
 	* Mac
 	> Check and install it
@@ -13,7 +13,7 @@
 
 2. Install `Nodejs`
 
-	> Download [here](https://nodejs.org/en/download/)
+	> [Download](https://nodejs.org/en/download/)
 
 3. Install `GitBook`
 ```bash

@@ -1,23 +1,16 @@
 # SSH
 
-* SSH login without password
+* SSH login without password(password free)
 > To set up a password-free login from service A to service B
-	+ With service A
 
-	```bash
-	ssh {service B} mkdir -p .ssh
-	```
+[import:6-7, title:"In service A"](../Code/shell.sh)
 
-	```bash
-	cat .ssh/id_rsa.pub | ssh {service B} 'cat >> .ssh/authorized_keys'
-	```
+[import:8-9, title:"In service B"](../Code/shell.sh)
 
-	+ With service B
+* Copy files
+> Add the followings to `~/.bash` or `~/.zshrc`
+[import:11-14, title:"SCP utils"](../Code/shell.sh)
 
-	```bash
-	chmod 700 .ssh
-	```
-
-	```bash
-	chmod 640 .ssh/authorized_keys
-	```
+* Keep SSH alive
+> Add the followings to `~/.bash` or `~/.zshrc`
+[import:15-15, title:"keep SSH alive"](../Code/shell.sh)
