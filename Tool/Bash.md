@@ -26,4 +26,4 @@ timestamp = `date '+%Y%m%d_%H%M%S'`
 
 * Wait for input/data/jobs or check existing
 
-[include](../Code/check_existing.sh)
+[include: title:"check_existing"](../Code/check_existing.sh)
