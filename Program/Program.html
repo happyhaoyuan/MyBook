@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>SSH · GitBook</title>
+        <title>Program · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -73,10 +73,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="Git.html" />
+    <link rel="next" href="Scala/Scala.html" />
     
     
-    <link rel="prev" href="Basic_tool.html" />
+    <link rel="prev" href="../Tool/Bash.html" />
     
 
     </head>
@@ -118,9 +118,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2" data-path="Basic_tool.html">
+        <li class="chapter " data-level="1.2" data-path="../Tool/Basic_tool.html">
             
-                <a href="Basic_tool.html">
+                <a href="../Tool/Basic_tool.html">
             
                     
                     Basic Tool
@@ -132,9 +132,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.2.1" data-path="SSH.html">
+        <li class="chapter " data-level="1.2.1" data-path="../Tool/SSH.html">
             
-                <a href="SSH.html">
+                <a href="../Tool/SSH.html">
             
                     
                     SSH
@@ -145,9 +145,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.2" data-path="Git.html">
+        <li class="chapter " data-level="1.2.2" data-path="../Tool/Git.html">
             
-                <a href="Git.html">
+                <a href="../Tool/Git.html">
             
                     
                     Git
@@ -158,9 +158,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.3" data-path="Bash.html">
+        <li class="chapter " data-level="1.2.3" data-path="../Tool/Bash.html">
             
-                <a href="Bash.html">
+                <a href="../Tool/Bash.html">
             
                     
                     Bash
@@ -176,9 +176,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3" data-path="../Program/Program.html">
+        <li class="chapter active" data-level="1.3" data-path="Program.html">
             
-                <a href="../Program/Program.html">
+                <a href="Program.html">
             
                     
                     Program
@@ -190,9 +190,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.3.1" data-path="../Program/Scala/Scala.html">
+        <li class="chapter " data-level="1.3.1" data-path="Scala/Scala.html">
             
-                <a href="../Program/Scala/Scala.html">
+                <a href="Scala/Scala.html">
             
                     
                     Scala
@@ -204,9 +204,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.3.1.1" data-path="../Program/Scala/Basic.html">
+        <li class="chapter " data-level="1.3.1.1" data-path="Scala/Basic.html">
             
-                <a href="../Program/Scala/Basic.html">
+                <a href="Scala/Basic.html">
             
                     
                     Basic
@@ -217,9 +217,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.1.2" data-path="../Program/Scala/Spark.html">
+        <li class="chapter " data-level="1.3.1.2" data-path="Scala/Spark.html">
             
-                <a href="../Program/Scala/Spark.html">
+                <a href="Scala/Spark.html">
             
                     
                     Spark
@@ -270,7 +270,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >SSH</a>
+        <a href=".." >Program</a>
     </h1>
 </div>
 
@@ -285,61 +285,9 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="ssh">SSH</h1>
-<ul>
-<li>SSH login without password(password free)<blockquote>
-<p>To set up a password-free login from service A to service B</p>
-</blockquote>
-</li>
-</ul>
-<blockquote>
-<p><a id="In service A" href="../Code/shell.sh">In service A</a></p>
-</blockquote>
-<div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:true,&quot;lang&quot;:&quot;sh&quot;,&quot;check&quot;:false,&quot;theme&quot;:&quot;monokai&quot;}">ssh &lt;service B&gt; mkdir -p .ssh
-cat .ssh/id_rsa.pub | ssh &lt;service B&gt; &apos;cat &gt;&gt; .ssh/authorized_keys&apos;<br></div></div>
-
-
-
-
-<blockquote>
-<p><a id="In service B" href="../Code/shell.sh">In service B</a></p>
-</blockquote>
-<div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:true,&quot;lang&quot;:&quot;sh&quot;,&quot;check&quot;:false,&quot;theme&quot;:&quot;monokai&quot;}">chmod 700 .ssh
-chmod 640 .ssh/authorized_keys<br></div></div>
-
-
-
-<ul>
-<li>Copy files<blockquote>
-<p>Add the followings to <code>~/.bash</code> or <code>~/.zshrc</code></p>
-</blockquote>
-</li>
-</ul>
-<blockquote>
-<p><a id="SCP utils" href="../Code/shell.sh">SCP utils</a></p>
-</blockquote>
-<div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:true,&quot;lang&quot;:&quot;sh&quot;,&quot;check&quot;:false,&quot;theme&quot;:&quot;monokai&quot;}">alias getf_from=&apos;f(){i=&quot;$1&quot;;j=&quot;$2&quot;;scp &lt;from_address&gt;:${i} ${j};};f&apos;
-alias getd_from=&apos;f(){i=&quot;$1&quot;;j=&quot;$2&quot;;scp -r &lt;from_address&gt;:${i} ${j};};f&apos;
-alias passf_to=&apos;f(){i=&quot;$1&quot;;j=&quot;$2&quot;;scp ${i} &lt;to_address&gt;:${j};};f&apos;
-alias passd_to=&apos;f(){i=&quot;$1&quot;;j=&quot;$2&quot;;scp -r ${i} &lt;to_address&gt;:${j};};f&apos;<br></div></div>
-
-
-
-<ul>
-<li>Keep SSH alive<blockquote>
-<p>Add the followings to <code>~/.bash</code> or <code>~/.zshrc</code></p>
-</blockquote>
-</li>
-</ul>
-<blockquote>
-<p><a id="keep SSH alive" href="../Code/shell.sh">keep SSH alive</a></p>
-</blockquote>
-<div class="ace"><div class="aceCode" data-config="{&quot;edit&quot;:true,&quot;lang&quot;:&quot;sh&quot;,&quot;check&quot;:false,&quot;theme&quot;:&quot;monokai&quot;}">alias ssh=&apos;ssh -o ServerAliveInterval=60&apos;<br></div></div>
-
-
-
+                                <p>Cover some popular languages for programming </p>
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; Haoyuan Zou 2019 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">latest edit&#xFF1A;
-2019-03-29 16:35:35
+2019-03-27 16:01:21
 </span></footer>
                                 
                                 </section>
@@ -367,12 +315,12 @@ alias passd_to=&apos;f(){i=&quot;$1&quot;;j=&quot;$2&quot;;scp -r ${i} &lt;to_ad
 
             
                 
-                <a href="Basic_tool.html" class="navigation navigation-prev " aria-label="Previous page: Basic Tool">
+                <a href="../Tool/Bash.html" class="navigation navigation-prev " aria-label="Previous page: Bash">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="Git.html" class="navigation navigation-next " aria-label="Next page: Git">
+                <a href="Scala/Scala.html" class="navigation navigation-next " aria-label="Next page: Scala">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -383,7 +331,7 @@ alias passd_to=&apos;f(){i=&quot;$1&quot;;j=&quot;$2&quot;;scp -r ${i} &lt;to_ad
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"SSH","level":"1.2.1","depth":2,"next":{"title":"Git","level":"1.2.2","depth":2,"path":"Tool/Git.md","ref":"./Tool/Git.md","articles":[]},"previous":{"title":"Basic Tool","level":"1.2","depth":1,"path":"Tool/Basic_tool.md","ref":"./Tool/Basic_tool.md","articles":[{"title":"SSH","level":"1.2.1","depth":2,"path":"Tool/SSH.md","ref":"./Tool/SSH.md","articles":[]},{"title":"Git","level":"1.2.2","depth":2,"path":"Tool/Git.md","ref":"./Tool/Git.md","articles":[]},{"title":"Bash","level":"1.2.3","depth":2,"path":"Tool/Bash.md","ref":"./Tool/Bash.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["include-codeblock","ace","splitter","github","tbfed-pagefooter","expandable-chapters-small","ga"],"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy Haoyuan Zou 2019","modify_label":"latest edit：","modify_format":"YYYY-MM-DD HH:mm:ss"},"ace":{},"github":{"url":"https://github.com/happyhaoyuan"},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"expandable-chapters-small":{},"ga":{"configuration":"auto","token":"UA-XXXX-Y"},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"acefull","theme":"monokai","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Tool/SSH.md","mtime":"2019-03-29T23:35:35.978Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-04T21:16:50.427Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Program","level":"1.3","depth":1,"next":{"title":"Scala","level":"1.3.1","depth":2,"path":"Program/Scala/Scala.md","ref":"./Program/Scala/Scala.md","articles":[{"title":"Basic","level":"1.3.1.1","depth":3,"path":"Program/Scala/Basic.md","ref":"./Program/Scala/Basic.md","articles":[]},{"title":"Spark","level":"1.3.1.2","depth":3,"path":"Program/Scala/Spark.md","ref":"./Program/Scala/Spark.md","articles":[]}]},"previous":{"title":"Bash","level":"1.2.3","depth":2,"path":"Tool/Bash.md","ref":"./Tool/Bash.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["include-codeblock","ace","splitter","github","tbfed-pagefooter","expandable-chapters-small","ga"],"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy Haoyuan Zou 2019","modify_label":"latest edit：","modify_format":"YYYY-MM-DD HH:mm:ss"},"ace":{},"github":{"url":"https://github.com/happyhaoyuan"},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"expandable-chapters-small":{},"ga":{"configuration":"auto","token":"UA-XXXX-Y"},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"acefull","theme":"monokai","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Program/Program.md","mtime":"2019-03-27T23:01:21.750Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-04T21:16:50.427Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
