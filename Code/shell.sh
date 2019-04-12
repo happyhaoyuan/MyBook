@@ -16,4 +16,4 @@ alias ssh='ssh -o ServerAliveInterval=60'
 
 export SPARK_HOME=.../spark-2.3.x-bin-hadoop2.x
 export PATH=$PATH:$SPARK_HOME:$SPARK_HOME/bin
-%SPARK_HOME%\bin //For Windows, add this to `envrionment variable`
+%SPARK_HOME%\bin #For Windows, add this to `envrionment variable`

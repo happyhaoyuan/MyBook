@@ -13,3 +13,6 @@ book:
 	gitbook serve --port $(port_number) &
 	@echo "[Step 4] open the url"
 	open $(book_url):$(port_number)
+open:
+	@echo "open the url"
+	open $(book_url):$(port_number)

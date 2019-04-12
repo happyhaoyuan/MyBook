@@ -14,8 +14,9 @@ log4j.rootCategory=ERROR, console
 ```
 > Setup with the following levels: `ALL`, `DEBUG`, `ERROR`, `FATAL`, `INFO`, `OFF`, `TRACE`, `TRACE_INT`, `WARN`
 
-[import:1-3, title:"setup_log_info_level"](../../Code/SparkScala.scala)
+[import:1-5, title:"setup_log_info_level"](../../Code/SparkScala.scala)
 
-* Initialize
+* Spark SQL
 
-[import:4-6, title:"import"](../../Code/SparkScala.scala)
+[import:7-8, title:"import"](../../Code/SparkScala.scala)
+

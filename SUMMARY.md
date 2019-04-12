@@ -8,5 +8,5 @@
 * [Program](./Program/Program.md)
     * [Scala](./Program/Scala/Scala.md)
         * [Basic](./Program/Scala/Basic.md)
-        * [Spark](./Program/Scala/Spark.md)
+        * [Spark](./Program/Scala/SparkScala.md)
 
