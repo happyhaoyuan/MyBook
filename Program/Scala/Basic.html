@@ -73,7 +73,7 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="Spark.html" />
+    <link rel="next" href="SparkScala.html" />
     
     
     <link rel="prev" href="Scala.html" />
@@ -217,9 +217,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.1.2" data-path="Spark.html">
+        <li class="chapter " data-level="1.3.1.2" data-path="SparkScala.html">
             
-                <a href="Spark.html">
+                <a href="SparkScala.html">
             
                     
                     Spark
@@ -310,10 +310,10 @@
 </li>
 <li><p>Variable</p>
 <ul>
-<li>Immutable variable(constant)<pre><code class="lang-scala"><span class="hljs-keyword">val</span> {variable_name}: {variable_type} = {variable_value}
+<li>Immutable variable(constant)<pre><code class="lang-scala"><span class="hljs-keyword">val</span> &lt;variable_name&gt;: &lt;variable_type&gt; = &lt;variable_value&gt;
 </code></pre>
 </li>
-<li>Mutable variable(var)<pre><code class="lang-scala"><span class="hljs-keyword">var</span> {variable_name}: {variable_type} = {variable_value}
+<li>Mutable variable(var)<pre><code class="lang-scala"><span class="hljs-keyword">var</span> &lt;variable_name&gt;: &lt;variable_type&gt; = &lt;variable_value&gt;
 </code></pre>
 </li>
 </ul>
@@ -331,15 +331,15 @@
 <li>Functions/methods<ul>
 <li>General<pre><code class="lang-scala">.getClass()    <span class="hljs-comment">//runtime class</span>
 .getType()    <span class="hljs-comment">//</span>
-.to{<span class="hljs-type">Type</span>}()    <span class="hljs-comment">//type convert</span>
+.to&lt;<span class="hljs-type">Type</span>&gt;()    <span class="hljs-comment">//type convert</span>
 .abs <span class="hljs-comment">//absolute value</span>
 .signum    <span class="hljs-comment">//-1, 0, 1 for negative, zero, positive</span>
 .isWhole    <span class="hljs-comment">//true if have no decimal component</span>
-.isInfinite()
+.isInfinite
 .isInfinity
 .isPosInfinity
 .isNegInfinity
-.isNaN    <span class="hljs-comment">//</span>
+.isNaN
 .isValidInt
 .toDegrees    <span class="hljs-comment">//the measurement of the angle x in degrees</span>
 .toRadians    <span class="hljs-comment">//the measurement of the angle in radians</span>
@@ -367,15 +367,58 @@
 .toLower
 .toUpper
 .asDigit    <span class="hljs-comment">//as digit instead .toInt with ASCII</span>
-.until(end = {up_to_but_not_including}, step=<span class="hljs-number">1</span>)
-.to(end = {including}, step=<span class="hljs-number">1</span>)
+.until(end = &lt;up_to_but_not_including&gt;, step=<span class="hljs-number">1</span>)
+.to(end = &lt;including&gt;, step=<span class="hljs-number">1</span>)
 </code></pre>
 </li>
-<li><a href="https://www.scala-lang.org/api/current/scala/collection/immutable/StringOps.html" target="_blank">String</a><pre><code class="lang-scala">.toTitleCase    <span class="hljs-comment">//Upper the first letter for each word</span>
+<li><a href="https://www.scala-lang.org/api/current/scala/collection/immutable/StringOps.html" target="_blank">String</a>, <a href="https://www.scala-lang.org/api/current/scala/collection/mutable/StringBuilder.html" target="_blank">StringBuilder</a><pre><code class="lang-scala">.length
+.concat(&lt;string&gt;)    <span class="hljs-comment">//equal with + &lt;string&gt;</span>
+==    <span class="hljs-comment">//equal</span>
+.equalsIgnoreCase(&lt;string&gt;)
+.capitalize    <span class="hljs-comment">//Upper the first letter for this string</span>
+.toTitleCase    <span class="hljs-comment">//Upper the first letter for each word</span>
+.isUpper
+.toUpperCase
+.isLower
+.toLowerCase
+.distinct    <span class="hljs-comment">//no duplicate(keep the first one)</span>
+.count(&lt;p: (char) =&gt; <span class="hljs-type">Boolean</span>&gt;)    <span class="hljs-comment">//count the number of elements which satisfy a predicate</span>
+.exists(&lt;p: (char) =&gt; <span class="hljs-type">Boolean</span>&gt;)    <span class="hljs-comment">//whether at least one element satisfying a predicate</span>
+.contains(&lt;searching&gt;)    <span class="hljs-comment">//true if contains the searching char/string</span>
+.containsSlice(&lt;sequence&gt;)    <span class="hljs-comment">//true if contains the searching sequence(order matters)</span>
+.indexOf(&lt;searching&gt;)    <span class="hljs-comment">//the first index(start with 0) of searching schar/tring or -1 if not found</span>
+.repalce(&lt;original&gt;,&lt;target&gt;)    <span class="hljs-comment">//replace all orginal char/string by target char/string</span>
+.split(&lt;seperator&gt;)    <span class="hljs-comment">//split by seperator char/string/regex</span>
+.trim     <span class="hljs-comment">//remove start and end space</span>
+.drop(&lt;n&gt;)    <span class="hljs-comment">//Selects all elements except last n ones</span>
+.take(&lt;n&gt;)    <span class="hljs-comment">//Selects first n elements</span>
+.takeRight(&lt;n&gt;)    <span class="hljs-comment">//Select last n elements</span>
+</code></pre>
+<ul>
+<li>Format<pre><code class="lang-scala"><span class="hljs-string">&quot;%&lt;specifier&gt;&quot;</span>.format(content) in order
+<span class="hljs-string">&quot;%&lt;position&gt;$&lt;specifier&gt;&quot;</span>.format(content)
+&lt;s,f,raw&gt;<span class="hljs-string">&quot;$&lt;{content}&gt;%&lt;specifier&gt;&quot;</span>
+</code></pre>
+<ul>
+<li>specifier<pre><code class="lang-scala">%c     <span class="hljs-comment">//Character</span>
+%d  <span class="hljs-comment">//Decimal number (integer, base 10)</span>
+%e  <span class="hljs-comment">//Exponential floating-point number</span>
+%f  <span class="hljs-comment">//Floating-point number</span>
+%i  <span class="hljs-comment">//Integer (base 10)</span>
+%o  <span class="hljs-comment">//Octal number (base 8)</span>
+%s  <span class="hljs-comment">//A string of characters</span>
+%u  <span class="hljs-comment">//Unsigned decimal (integer) number</span>
+%x  <span class="hljs-comment">//Hexadecimal number (base 16)</span>
+%%  <span class="hljs-comment">//Print a &#x201C;percent&#x201D; character</span>
+\%  <span class="hljs-comment">//Print a &#x201C;percent&#x201D; character</span>
 </code></pre>
 </li>
-<li><a href="https://www.scala-lang.org/api/2.12.3/scala/runtime/RichInt.html" target="_blank">RichInt</a>/<a href="https://www.scala-lang.org/api/current/scala/math/BigInt.html" target="_blank">BigInt</a>/<a href="https://www.scala-lang.org/api/2.12.3/scala/Long.html" target="_blank">Long</a>/<a href="https://www.scala-lang.org/api/2.12.3/scala/Int.html" target="_blank">Int</a>/<a href="https://www.scala-lang.org/api/2.12.3/scala/Short.html" target="_blank">Short</a>/<a href="https://www.scala-lang.org/api/2.12.3/scala/Byte.html" target="_blank">Byte</a><pre><code class="lang-scala">.util(end = {up_to_but_not_including}, step=<span class="hljs-number">1</span>)
-.to(end = {including}, step=<span class="hljs-number">1</span>)
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="https://www.scala-lang.org/api/2.12.3/scala/runtime/RichInt.html" target="_blank">RichInt</a>/<a href="https://www.scala-lang.org/api/current/scala/math/BigInt.html" target="_blank">BigInt</a>/<a href="https://www.scala-lang.org/api/2.12.3/scala/Long.html" target="_blank">Long</a>/<a href="https://www.scala-lang.org/api/2.12.3/scala/Int.html" target="_blank">Int</a>/<a href="https://www.scala-lang.org/api/2.12.3/scala/Short.html" target="_blank">Short</a>/<a href="https://www.scala-lang.org/api/2.12.3/scala/Byte.html" target="_blank">Byte</a><pre><code class="lang-scala">.util(end = &lt;up_to_but_not_including&gt;, step=<span class="hljs-number">1</span>)
+.to(end = &lt;including&gt;, step=<span class="hljs-number">1</span>)
 </code></pre>
 </li>
 <li><a href="https://www.scala-lang.org/api/current/scala/runtime/RichDouble.html" target="_blank">RichDouble</a>/<a href="https://www.scala-lang.org/api/current/scala/math/BigDecimal.html" target="_blank">BigDecimal</a>/<a href="https://www.scala-lang.org/api/2.12.3/scala/Double.html" target="_blank">Double</a>/<a href="https://www.scala-lang.org/api/current/scala/runtime/RichFloat.html" target="_blank">RichFloat</a>/<a href="https://www.scala-lang.org/api/current/scala/Float.html" target="_blank">Float</a><pre><code class="lang-scala">  .round    <span class="hljs-comment">//nearest integer [Int]</span>
@@ -407,12 +450,42 @@
 <img src="Casting.png" alt="Casting"></li>
 </ul>
 </li>
-</ul>
+<li><p>Import&amp;call&amp;apply</p>
 <ul>
-<li></li>
+<li>Import<pre><code class="lang-scala"><span class="hljs-keyword">import</span> &lt;package_name&gt;.{&lt;method_name_with_comma&gt;}
+<span class="hljs-keyword">import</span> &lt;package_name&gt;._ <span class="hljs-comment">//all</span>
+</code></pre>
+</li>
+<li>Call a function<pre><code class="lang-scala">&lt;<span class="hljs-class"><span class="hljs-keyword">object</span><span class="hljs-title">&gt;</span>.<span class="hljs-title">&lt;function&gt;</span> <span class="hljs-title">//no</span> <span class="hljs-title">parameter</span></span>
+&lt;<span class="hljs-class"><span class="hljs-keyword">object</span><span class="hljs-title">&gt;</span>.<span class="hljs-title">&lt;function&gt;</span>(<span class="hljs-params">&lt;parameters&gt;</span>)</span>
+</code></pre>
+</li>
+<li>apply<pre><code>(&lt;object&gt;)(&lt;key&gt;)
+&lt;object&gt;.apply(&lt;key&gt;)
+</code></pre></li>
+</ul>
+</li>
+<li><p>Packages</p>
+<ul>
+<li>math<pre><code class="lang-scala"><span class="hljs-keyword">import</span> scala.math._
+<span class="hljs-type">E</span>     <span class="hljs-comment">//e=2.718281828459045</span>
+<span class="hljs-type">Pi</span>     <span class="hljs-comment">//pi=3.141592653589793</span>
+rint(&lt;input&gt;:<span class="hljs-type">Double</span>): <span class="hljs-type">Double</span>    <span class="hljs-comment">//return a cloasest integer in Double</span>
+pow(&lt;base&gt;:<span class="hljs-type">Double</span>, &lt;exponent&gt;)    <span class="hljs-comment">//return base ** exponent</span>
+log(&lt;value&gt;)    <span class="hljs-comment">//return log_e(value)</span>
+log10(&lt;value&gt;)    <span class="hljs-comment">//return log_10(value)</span>
+acos(&lt;value&gt;), asin(&lt;value&gt;),atan(&lt;value&gt;)    <span class="hljs-comment">//arccos, arcsin, arctan</span>
+cos(&lt;value&gt;), sin(&lt;value&gt;), tan(&lt;value&gt;)    <span class="hljs-comment">//cos, sin, tan</span>
+cosh(&lt;value&gt;), sinh(&lt;value&gt;), tanh(&lt;value&gt;)    <span class="hljs-comment">//cosh, sinh, tanh</span>
+cbrt(&lt;value&gt;), sqrt(&lt;value&gt;)    <span class="hljs-comment">//cube, square root</span>
+random    <span class="hljs-comment">//random positive double from [0, 1]</span>
+</code></pre>
+</li>
+</ul>
+</li>
 </ul>
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; Haoyuan Zou 2019 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">latest edit&#xFF1A;
-2019-03-28 14:38:42
+2019-04-12 13:53:54
 </span></footer>
                                 
                                 </section>
@@ -445,7 +518,7 @@
                 </a>
                 
                 
-                <a href="Spark.html" class="navigation navigation-next " aria-label="Next page: Spark">
+                <a href="SparkScala.html" class="navigation navigation-next " aria-label="Next page: Spark">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -456,7 +529,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Basic","level":"1.3.1.1","depth":3,"next":{"title":"Spark","level":"1.3.1.2","depth":3,"path":"Program/Scala/Spark.md","ref":"./Program/Scala/Spark.md","articles":[]},"previous":{"title":"Scala","level":"1.3.1","depth":2,"path":"Program/Scala/Scala.md","ref":"./Program/Scala/Scala.md","articles":[{"title":"Basic","level":"1.3.1.1","depth":3,"path":"Program/Scala/Basic.md","ref":"./Program/Scala/Basic.md","articles":[]},{"title":"Spark","level":"1.3.1.2","depth":3,"path":"Program/Scala/Spark.md","ref":"./Program/Scala/Spark.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["include-codeblock","ace","splitter","github","tbfed-pagefooter","expandable-chapters-small","ga"],"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy Haoyuan Zou 2019","modify_label":"latest edit：","modify_format":"YYYY-MM-DD HH:mm:ss"},"ace":{},"github":{"url":"https://github.com/happyhaoyuan"},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"expandable-chapters-small":{},"ga":{"configuration":"auto","token":"UA-XXXX-Y"},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"acefull","theme":"monokai","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Program/Scala/Basic.md","mtime":"2019-03-28T21:38:42.533Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-04T21:16:50.427Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Basic","level":"1.3.1.1","depth":3,"next":{"title":"Spark","level":"1.3.1.2","depth":3,"path":"Program/Scala/SparkScala.md","ref":"./Program/Scala/SparkScala.md","articles":[]},"previous":{"title":"Scala","level":"1.3.1","depth":2,"path":"Program/Scala/Scala.md","ref":"./Program/Scala/Scala.md","articles":[{"title":"Basic","level":"1.3.1.1","depth":3,"path":"Program/Scala/Basic.md","ref":"./Program/Scala/Basic.md","articles":[]},{"title":"Spark","level":"1.3.1.2","depth":3,"path":"Program/Scala/SparkScala.md","ref":"./Program/Scala/SparkScala.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["include-codeblock","ace","splitter","github","tbfed-pagefooter","expandable-chapters-small","ga"],"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy Haoyuan Zou 2019","modify_label":"latest edit：","modify_format":"YYYY-MM-DD HH:mm:ss"},"ace":{},"github":{"url":"https://github.com/happyhaoyuan"},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"expandable-chapters-small":{},"ga":{"configuration":"auto","token":"UA-XXXX-Y"},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"acefull","theme":"monokai","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Program/Scala/Basic.md","mtime":"2019-04-12T20:53:54.251Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-12T21:01:52.771Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
