@@ -67,3 +67,10 @@ git status
 ```bash
 git config --get remote.origin.url
 ```
+
+* Config 
+```bash
+git config --global credential.helper store
+vi  ~/.git-credentials
+https://<USERNAME>:<Personal access tokens>@github.com
+```
