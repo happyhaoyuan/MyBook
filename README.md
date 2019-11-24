@@ -4,6 +4,15 @@
 
 > https://blog.joaograssi.com/windows-subsystem-for-linux-with-oh-my-zsh-conemu/
 > https://www.howtoforge.com/tutorial/how-to-setup-zsh-and-oh-my-zsh-on-linux/
+> https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md
+```
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+```
+> https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md
+```
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+```
+
 ```bash
 unsetopt inc_append_history
 unsetopt share_history
