@@ -1,5 +1,9 @@
 # How to initialize My Gitbook
 
+0. Install `zsh`
+
+> https://blog.joaograssi.com/windows-subsystem-for-linux-with-oh-my-zsh-conemu/
+
 1. Install `Git`
 
 	* Windows 
