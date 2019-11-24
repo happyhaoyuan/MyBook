@@ -6,6 +6,14 @@
 ```bash
 unsetopt inc_append_history
 unsetopt share_history
+plugins=(
+  git                                                                                                                                                           zsh-autosuggestions
+  zsh-syntax-highlighting
+  docker
+  sudo
+  vi-mode
+  virtualenvwrapper
+)
 ```
 
 1. Install `Git`
