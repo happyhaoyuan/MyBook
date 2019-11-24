@@ -14,6 +14,7 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 ```
 
 ```bash
+ZSH_DISABLE_COMPFIX="true"
 unsetopt inc_append_history
 unsetopt share_history
 plugins=(
