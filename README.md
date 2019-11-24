@@ -3,6 +3,7 @@
 0. Install `zsh`
 
 > https://blog.joaograssi.com/windows-subsystem-for-linux-with-oh-my-zsh-conemu/
+> https://www.howtoforge.com/tutorial/how-to-setup-zsh-and-oh-my-zsh-on-linux/
 ```bash
 unsetopt inc_append_history
 unsetopt share_history
