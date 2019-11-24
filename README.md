@@ -3,6 +3,10 @@
 0. Install `zsh`
 
 > https://blog.joaograssi.com/windows-subsystem-for-linux-with-oh-my-zsh-conemu/
+```bash
+unsetopt inc_append_history
+unsetopt share_history
+```
 
 1. Install `Git`
 
